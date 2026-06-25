@@ -16,6 +16,7 @@ const AnimatedHeaderSection = ({
   const shouldSplitTitle = title.includes(" ");
   const titleParts = shouldSplitTitle ? title.split(" ") : [title];
   useGSAP(() => {
+    if (loading) return;
     const tl = gsap.timeline({
       scrollTrigger: withScrollTrigger
         ? {
@@ -26,7 +27,6 @@ const AnimatedHeaderSection = ({
     tl.from(contextRef.current, {
       y: "50vh",
       duration: 1,
-      delay: loading ? 2 : 0,
       ease: "circ.out",
     });
     tl.from(
@@ -35,12 +35,11 @@ const AnimatedHeaderSection = ({
         opacity: 0,
         y: "200",
         duration: 1,
-        delay: loading ? 2 : 0,
         ease: "circ.out",
       },
       "<+0.2"
     );
-  }, []);
+  }, [loading]);
   return (
     <div ref={contextRef}>
       <div style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>

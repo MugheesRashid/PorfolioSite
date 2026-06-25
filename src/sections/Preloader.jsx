@@ -80,7 +80,7 @@ const words = [
   "Hallo",
 ];
 
-export default function Index() {
+export default function Index({ onComplete }) {
   const [index, setIndex] = useState(0);
   const [dimension, setDimension] = useState({ width: 0, height: 0 });
 
@@ -89,14 +89,20 @@ export default function Index() {
   }, []);
 
   useEffect(() => {
-    if (index == words.length - 1) return;
-    setTimeout(
+    if (index === words.length - 1) {
+      const timer = setTimeout(() => {
+        if (onComplete) onComplete();
+      }, 1000); // 1 second delay on the final greeting before loader starts to move up
+      return () => clearTimeout(timer);
+    }
+    const timer = setTimeout(
       () => {
         setIndex(index + 1);
       },
-      index == 0 ? 1000 : 150,
+      index === 0 ? 1000 : 150,
     );
-  }, [index]);
+    return () => clearTimeout(timer);
+  }, [index, onComplete]);
 
   const initialPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} Q${dimension.width / 2} ${dimension.height + 300} 0 ${dimension.height}  L0 0`;
   const targetPath = `M0 0 L${dimension.width} 0 L${dimension.width} ${dimension.height} Q${dimension.width / 2} ${dimension.height} 0 ${dimension.height}  L0 0`;

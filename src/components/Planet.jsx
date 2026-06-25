@@ -7,18 +7,19 @@ import { useGLTF } from "@react-three/drei";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
-export function Planet(props) {
+export function Planet({ loading, ...props }) {
   const shapeContainer = useRef(null);
   const shperesContainer = useRef(null);
   const ringContainer = useRef(null);
   const { nodes, materials } = useGLTF("/models/Planet.glb");
 
   useGSAP(() => {
+    if (loading) return;
     const tl = gsap.timeline();
     tl.from(shapeContainer.current.position, {
       y: 5,
       duration: 3,
-      delay: 1,
+      delay: 0.2,
       ease: "circ.out",
     });
     tl.from(
@@ -28,7 +29,7 @@ export function Planet(props) {
         y: Math.PI,
         z: -Math.PI,
         duration: 10,
-        delay: 1,
+        delay: 0.2,
         ease: "power1.inOut",
       },
       "-=25%"
@@ -40,12 +41,12 @@ export function Planet(props) {
         y: 0,
         z: 0,
         duration: 10,
-        delay: 1,
+        delay: 0.2,
         ease: "power1.inOut",
       },
       "<"
     );
-  }, []);
+  }, [loading]);
 
   return (
     <group ref={shapeContainer} {...props} dispose={null}>
