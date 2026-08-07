@@ -16,6 +16,8 @@ and shaping meaningful software for the future`;
         text={text}
         textColor={"text-black"}
         loading={loading}
+        as="h1"
+        titleId="hero-title"
       />
       <figure
         className="absolute inset-0 -z-50"
@@ -58,7 +60,7 @@ and shaping meaningful software for the future`;
             </group>
           </Environment>
         </Canvas>
-      </figure> 
+      </figure>  
     </section>
   );
 };

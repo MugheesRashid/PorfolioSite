@@ -98,25 +98,34 @@ const Navbar = () => {
   return (
     <>
       <nav
+        id="nav-menu"
         ref={navRef}
+        aria-hidden={!isOpen}
         className="fixed z-50 flex flex-col justify-between w-full h-full px-10 uppercase bg-black text-white/80 py-28 gap-y-10 md:w-1/2 md:left-1/2"
       >
         <div className="flex flex-col text-4xl gap-y-2 md:text-5xl lg:text-5xl">
-          {["home", "services", "about", "work","research", "contact"].map(
-            (section, index) => (
-              <div key={index} ref={(el) => (linksRef.current[index] = el)}>
-                <Link
-                  className="transition-all duration-300 cursor-pointer hover:text-white"
-                  to={`${section}`}
-                  smooth
-                  offset={0}
-                  duration={2000}
-                >
-                  {section}
-                </Link>
-              </div>
-            )
-          )}
+          {[
+            { id: 'home', label: 'Home' },
+            { id: 'services', label: 'Services' },
+            { id: 'ai-projects', label: 'AI' },
+            { id: 'about', label: 'About' },
+            { id: 'work', label: 'Work' },
+            { id: 'research', label: 'Research' },
+            { id: 'legacy', label: 'Legacy' },
+            { id: 'contact', label: 'Contact' },
+          ].map((section, index) => (
+            <div key={index} ref={(el) => (linksRef.current[index] = el)}>
+              <Link
+                className="transition-all duration-300 cursor-pointer hover:text-white"
+                to={section.id}
+                smooth
+                offset={0}
+                duration={2000}
+              >
+                {section.label}
+              </Link>
+            </div>
+          ))}
         </div>
         <div
           ref={contactRef}
@@ -146,8 +155,12 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      <div
-        className="fixed z-50 flex flex-col items-center justify-center gap-1 transition-all duration-300 bg-black rounded-full cursor-pointer w-14 h-14 md:w-20 md:h-20 top-4 right-10"
+      <button
+        type="button"
+        aria-expanded={isOpen}
+        aria-controls="nav-menu"
+        aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+        className="fixed z-50 flex flex-col items-center justify-center gap-1 transition-all duration-300 bg-black rounded-full w-14 h-14 md:w-20 md:h-20 top-4 right-10"
         onClick={toggleMenu}
         style={
           showBurger
@@ -163,7 +176,7 @@ const Navbar = () => {
           ref={bottomLineRef}
           className="block w-8 h-0.5 bg-white rounded-full origin-center"
         ></span>
-      </div>
+      </button>
     </>
   );
 };

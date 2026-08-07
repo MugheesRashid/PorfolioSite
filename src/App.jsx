@@ -72,16 +72,18 @@ const App = () => {
         } transition-opacity duration-1000`}
       >
         <Navbar />
-        <Hero loading={loading} />
-        <ServiceSummary />
-        <Services />
-        <About />
-        <AIProjects />
-        <Works />
-        <Research />
-        <ContactSummary />
-        <ServicesNew />
-        <Contact />
+        <main>
+          <Hero loading={loading} />
+          <ServiceSummary />
+          <Services />
+          <About />
+          <AIProjects />
+          <Works />
+          <Research />
+          <ContactSummary />
+          <ServicesNew />
+          <Contact />
+        </main>
       </div>
     </ReactLenis>
   );

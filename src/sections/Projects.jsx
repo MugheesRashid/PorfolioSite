@@ -264,7 +264,7 @@ const Modal = ({ modal, projectList }) => {
                   src={`/assets/projects/${src}`}
                   width={300}
                   height={0}
-                  alt="image"
+                  alt={`${project.title} preview`}
                 />
               </div>
             );
@@ -292,10 +292,14 @@ const Modal = ({ modal, projectList }) => {
 };
 
 const Project = ({ title, link, desc, index, setModal }) => {
+  const isExternal = link && link !== "#" && !link.startsWith("/");
   return (
     <>
       <style>{GlobalStyles}</style>
-      <div
+      <a
+        href={link}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
         onMouseEnter={() => {
           setModal({ active: true, index });
         }}
@@ -303,15 +307,14 @@ const Project = ({ title, link, desc, index, setModal }) => {
           setModal({ active: false, index });
         }}
         className="project"
-        onClick={() => window.open(link, "_blank")}
-        style={{ cursor: "pointer" }}
+        aria-label={`Open project ${title}`}
       >
         <div className="projectTitle">
           <h2>{title}</h2>
           <p>{desc}</p>
         </div>
         <p>Design & Development</p>
-      </div>
+      </a>
     </>
   );
 };
