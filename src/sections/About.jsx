@@ -5,18 +5,13 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const About = () => {
-  const text = `Passionate about clean architecture
-    I build scalable, high-performance solutions
-    from prototype to production`;
-const aboutText = `I’m passionate about crafting digital experiences that blend great design, seamless functionality, and real business impact. Whether it's building Shopify stores, developing web applications, or shaping brand identities, I focus on creating products that people genuinely enjoy using.
+  const text = `Building polished digital products
+    with clean architecture, product thinking,
+    and a growing focus on healthcare AI`;
+  const aboutText = `I’m a full-stack developer creating web applications, digital products, and scalable systems with a strong emphasis on design, performance, and user experience. My work spans modern frontend and backend engineering, but my long-term focus is expanding into medical AI research, healthcare technology, and responsible AI systems that can create real impact.
 
-When I’m not building something:
- ♟️Playing chess and sharpening my strategic thinking
- 🤖Exploring the latest AI tools , models, and side projects
- 💪Training at the gym and pushing my limits
- 🛐Learning about different cultures, ideas, and perspectives from around the world
- 🔹Taking courses and constantly leveling up my skills`;
-const imgRef = useRef(null);
+My journey sits at the intersection of software engineering and medical innovation: building reliable products today while exploring machine learning, clinical relevance, and future healthcare applications.`;
+  const imgRef = useRef(null);
   useGSAP(() => {
     gsap.to("#about", {
       scale: 0.95,
@@ -53,7 +48,7 @@ const imgRef = useRef(null);
         <img
           ref={imgRef}
           src="images/man.png"
-          alt="man"
+          alt="Mughees Rashid, full stack developer and aspiring medical AI researcher"
           className="w-md rounded-3xl"
         />
         <AnimatedTextLines text={aboutText} className={"w-full"} />

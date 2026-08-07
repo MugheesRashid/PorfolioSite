@@ -5,14 +5,14 @@ import { useMediaQuery } from "react-responsive";
 import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
 const Hero = ({ loading }) => {
   const isMobile = useMediaQuery({ maxWidth: 853 });
-  const text = `I help growing brands and startups gain an
-unfair advantage through premium
-results driven webs/apps`;
+  const text = `Full Stack Developer & Aspiring Medical AI Researcher
+building modern products, exploring healthcare AI,
+and shaping meaningful software for the future`;
   return (
-    <section id="home" className="flex flex-col justify-end min-h-screen">
+    <section id="home" className="relative flex flex-col justify-end min-h-screen" aria-labelledby="hero-title">
       <AnimatedHeaderSection
-        subTitle={"404 No Bugs Found"}
-        title={"MUGHEES R."}
+        subTitle={"Full Stack Developer • Aspiring Medical AI Researcher"}
+        title={"MUGHEES RASHID"}
         text={text}
         textColor={"text-black"}
         loading={loading}
@@ -58,7 +58,7 @@ results driven webs/apps`;
             </group>
           </Environment>
         </Canvas>
-      </figure>
+      </figure> 
     </section>
   );
 };

@@ -8,10 +8,11 @@ import About from "./sections/About";
 import Works from "./sections/Works";
 import ContactSummary from "./sections/ContactSummary";
 import Contact from "./sections/Contact";
-import Projects from "./sections/Projects";
 import { useProgress } from "@react-three/drei";
 import Preloader from "./sections/Preloader";
 import ServicesNew from "./sections/ServicesNew";
+import Research from "./sections/Research";
+import AIProjects from "./sections/AIProjects";
 import { AnimatePresence } from "motion/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -75,8 +76,9 @@ const App = () => {
         <ServiceSummary />
         <Services />
         <About />
-         <Works />
-        {/* <Projects /> */}
+        <AIProjects />
+        <Works />
+        <Research />
         <ContactSummary />
         <ServicesNew />
         <Contact />
