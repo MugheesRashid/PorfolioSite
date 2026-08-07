@@ -109,7 +109,7 @@ const Works = () => {
         withScrollTrigger={true}
       />
       <div
-        className="relative flex flex-col font-light"
+        className="relative flex flex-col font-light kol"
         onMouseMove={handleMouseMove}
       >
        <Project /> 
