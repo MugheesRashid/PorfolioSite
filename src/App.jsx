@@ -77,9 +77,9 @@ const App = () => {
           <ServiceSummary />
           <Services />
           <About />
-          <AIProjects />
+          {/* <AIProjects /> */}
           <Works />
-          <Research />
+         {/*<Research /> */}
           <ContactSummary />
           <ServicesNew />
           <Contact />

@@ -12,7 +12,7 @@ and shaping meaningful software for the future`;
     <section id="home" className="relative flex flex-col justify-end min-h-screen" aria-labelledby="hero-title">
       <AnimatedHeaderSection
         subTitle={"Full Stack Developer • Aspiring Medical AI Researcher"}
-        title={"MUGHEES RASHID"}
+        title={"MUGHEES R."}
         text={text}
         textColor={"text-black"}
         loading={loading}

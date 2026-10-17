@@ -231,12 +231,13 @@ const Modal = ({ modal, projectList }) => {
 
     window.addEventListener("mousemove", (e) => {
       const { clientX, clientY } = e;
+      console.log(clientX, clientY + window.scrollY);
       xMoveContainer(clientX);
-      yMoveContainer(clientY + window.scrollY - 7766);
+      yMoveContainer(clientY + window.scrollY - 7086);
       xMoveCursor(clientX);
-      yMoveCursor(clientY + window.scrollY - 7766);
+      yMoveCursor(clientY + window.scrollY - 7086);
       xMoveCursorLabel(clientX);
-      yMoveCursorLabel(clientY + window.scrollY - 7766);
+      yMoveCursorLabel(clientY + window.scrollY - 7086);
       console.log(clientX, clientY + window.scrollY);
     });
   }, []);
