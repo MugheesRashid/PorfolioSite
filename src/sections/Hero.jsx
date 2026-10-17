@@ -6,7 +6,7 @@ import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
 const Hero = ({ loading }) => {
   const isMobile = useMediaQuery({ maxWidth: 853 });
   const text = `Full Stack Developer & Aspiring Medical AI Researcher
-building modern products, exploring healthcare AI,
+building modern products, exploring AI,
 and shaping meaningful software for the future`;
   return (
     <section id="home" className="relative flex flex-col justify-end min-h-screen" aria-labelledby="hero-title">

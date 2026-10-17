@@ -107,10 +107,10 @@ const Navbar = () => {
           {[
             { id: 'home', label: 'Home' },
             { id: 'services', label: 'Services' },
-            { id: 'ai-projects', label: 'AI' },
+           {/* { id: 'ai-projects', label: 'AI' }, */}
             { id: 'about', label: 'About' },
             { id: 'work', label: 'Work' },
-            { id: 'research', label: 'Research' },
+          {/*  { id: 'research', label: 'Research' }, */}
             { id: 'legacy', label: 'Legacy' },
             { id: 'contact', label: 'Contact' },
           ].map((section, index) => (

@@ -7,10 +7,10 @@ import gsap from "gsap";
 const About = () => {
   const text = `Building polished digital products
     with clean architecture, product thinking,
-    and a growing focus on healthcare AI`;
-  const aboutText = `I’m a full-stack developer creating web applications, digital products, and scalable systems with a strong emphasis on design, performance, and user experience. My work spans modern frontend and backend engineering, but my long-term focus is expanding into medical AI research, healthcare technology, and responsible AI systems that can create real impact.
+    and a growing focus on AI`;
+  const aboutText = `I’m a full-stack developer creating web applications, digital products, and scalable systems with a strong emphasis on design, performance, and user experience. My work spans modern frontend and backend engineering, but my long-term focus is expanding into medical AI research, technology, and responsible AI systems that can create real impact.
 
-My journey sits at the intersection of software engineering and medical innovation: building reliable products today while exploring machine learning, clinical relevance, and future healthcare applications.`;
+My journey sits at the intersection of software engineering and AI innovation: building reliable products today while exploring machine learning, and future applications.`;
   const imgRef = useRef(null);
   useGSAP(() => {
     gsap.to("#about", {
